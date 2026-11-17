@@ -1,4 +1,4 @@
-/* ===== Utilitas ===== */
+/* ===== Utilitas ==== */
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const hl = c => esc(c).replace(/("[^"]*")/g, '<i class="s">$1</i>').replace(/\b(let|const|function|return|if|else|for|while)\b/g, '<i class="k">$1</i>').replace(/\b(\d+)\b/g, '<i class="n">$1</i>');
