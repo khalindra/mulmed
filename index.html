@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Codely - Belajar Coding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Material+Symbols+Rounded&display=block" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="device">
+
+<!-- LOGIN -->
+<section class="screen on" id="s-login">
+  <header class="top"><span></span><b>Codely</b><span></span></header>
+  <div class="hero"><div class="mimi lg">🤖</div><h1>Codely</h1>
+    <p>Selamat datang kembali! Yuk lanjut belajar bareng.</p>
+    <span class="chip"><span class="i">local_fire_department</span>3.410 developer sedang ngoding</span></div>
+  <form class="card pad" id="f-login">
+    <label class="lbl">Alamat email</label>
+    <div class="inp"><span class="i">mail</span><input id="email" type="email" value="alex@creativecode.dev"></div>
+    <label class="lbl">Kata sandi</label>
+    <div class="inp"><span class="i">lock</span><input id="pass" type="password" value="supersecret"><button type="button" class="eye i" data-eye="pass">visibility</button></div>
+    <a class="link right" data-go="forgot">Lupa kata sandi?</a>
+    <button class="btn p" type="submit">Masuk <span class="i">arrow_forward</span></button>
+    <div class="or"><span>atau lanjut dengan</span></div>
+    <button class="btn g" type="button" id="google">Masuk dengan Google</button>
+  </form>
+  <p class="center muted">Belum punya akun? <a class="link" id="signup">Daftar</a></p>
+</section>
+
+<!-- LUPA SANDI -->
+<section class="screen" id="s-forgot">
+  <header class="top"><button class="ib i" data-go="login">arrow_back</button><b>Codely</b><span></span></header>
+  <div class="hero"><div class="mimi lg ring">🔑</div><h1>Lupa kata sandi?</h1>
+    <p>Tenang! Masukkan email terdaftar dan kami kirim kode verifikasi untuk mengatur ulang kata sandimu.</p></div>
+  <div class="pad">
+    <label class="lbl">Alamat email</label>
+    <div class="inp"><span class="i">mail</span><input id="femail" type="email" value="alex@creativecode.dev"></div>
+    <p class="note"><span class="i">shield</span>Kode 4 digit dikirim lewat email terenkripsi</p>
+    <button class="btn p" id="sendCode">Kirim kode <span class="i">arrow_forward</span></button>
+    <p class="center muted">Ingat kata sandi? <a class="link" data-go="login">Masuk</a></p>
+  </div>
+</section>
+
+<!-- VERIFIKASI -->
+<section class="screen" id="s-verify">
+  <header class="top"><button class="ib i" data-go="forgot">arrow_back</button><b>Codely</b><span></span></header>
+  <div class="hero"><div class="mimi lg ring">✉️</div><h1>Cek emailmu</h1>
+    <p>Kami mengirim kode 4 digit ke</p><span class="chip mono" id="vmail"></span></div>
+  <div class="otp" id="otp"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"></div>
+  <div class="pad">
+    <button class="btn p" id="verify">Verifikasi kode <span class="i">arrow_forward</span></button>
+    <p class="center muted">Belum menerima email? <a class="link dis" id="resend">Kirim ulang</a> <span class="chip mono" id="cd">00:44</span></p>
+    <div class="card pad tip"><b>Tips ramah</b><p>Tidak ketemu? Cek folder spam atau cari pesan dari hello@codely.dev.</p></div>
+  </div>
+</section>
+
+<!-- SANDI BARU -->
+<section class="screen" id="s-reset">
+  <header class="top"><button class="ib i" data-go="verify">arrow_back</button><b>Codely</b><span></span></header>
+  <div class="hero"><div class="mimi lg ring">🔒</div><h1>Buat kata sandi baru</h1><p>Kata sandi baru harus berbeda dari yang pernah dipakai.</p></div>
+  <div class="pad">
+    <label class="lbl">Kata sandi baru</label>
+    <div class="inp"><span class="i">lock</span><input id="np" type="password" placeholder="Minimal 8 karakter"><button type="button" class="eye i" data-eye="np">visibility</button></div>
+    <label class="lbl">Konfirmasi kata sandi</label>
+    <div class="inp"><span class="i">lock_clock</span><input id="cp" type="password" placeholder="Ulangi kata sandi"><button type="button" class="eye i" data-eye="cp">visibility</button></div>
+    <button class="btn p" id="doReset">Atur ulang kata sandi <span class="i">arrow_forward</span></button>
+  </div>
+</section>
+
+<!-- BELAJAR (PETA) -->
+<section class="screen" id="s-home">
+  <header class="top"><div class="brand"><span class="mimi sm">🤖</span><div><b>Codely 💗</b><small>Petualangan belajar</small></div></div>
+    <div class="pills"><span class="pill"><span class="i">local_fire_department</span>7 Hari</span><span class="pill"><span class="i">diamond</span><b id="gems">420</b></span></div></header>
+  <div class="card pad hud"><div class="row"><span class="mimi sm">🧑‍💻</span><div class="grow"><b>Alex Dev 💗</b><small id="hudSub"></small></div><span class="tag" id="hudTag">Modul dasar</span></div>
+    <div class="bar"><i id="hudBar"></i></div><div class="row between small"><span id="hudMsg"></span><b id="hudPct"></b></div></div>
+  <h2 class="sec">🗺️ Peta Petualangan Koding</h2>
+  <div class="map" id="map"></div>
+  <div class="card pad mission" id="mission"></div>
+</section>
+
+<!-- KUIS -->
+<section class="screen" id="s-quiz">
+  <header class="top"><button class="ib i" id="quitQuiz">close</button><b>Sesi kuis</b>
+    <div class="pills"><span class="pill red"><span class="i fill">favorite</span><b id="hearts">5</b></span><span class="pill"><span class="i">diamond</span><b id="gems2">420</b></span></div></header>
+  <div class="segs" id="segs"></div>
+  <div id="quizBody"></div>
+</section>
+
+<!-- RINGKASAN -->
+<section class="screen" id="s-summary"></section>
+
+<!-- PROFIL -->
+<section class="screen" id="s-profile">
+  <header class="top"><div class="brand"><span class="mimi sm i">code</span><b>Codely</b></div></header>
+  <div class="card pad prof"><div class="mimi lg ring">🧑‍💻</div><div><h2>Alex Dev <span class="i ver">verified</span></h2><small>@alexdev</small><br><span class="chip">Level <b id="plv">1</b> • Junior Coder</span></div></div>
+  <h3 class="sec">Aktivitas belajar</h3>
+  <div class="grid2" id="stats"></div>
+  <h3 class="sec">Pencapaian</h3>
+  <div class="grid2" id="ach"></div>
+  <h3 class="sec">Pengaturan akun</h3>
+  <div class="card list">
+    <a data-toast="Pilihan bahasa segera hadir"><span class="i">translate</span><div><b>Bahasa aplikasi</b><small>Bahasa Indonesia</small></div><span class="i">chevron_right</span></a>
+    <a data-toast="Pengaturan keamanan segera hadir"><span class="i">shield_lock</span><div><b>Keamanan &amp; kata sandi</b><small>Terakhir diubah 2 minggu lalu</small></div><span class="i">chevron_right</span></a>
+    <a data-go="forgot"><span class="i">key</span><div><b>Ubah kata sandi</b><small>Lewat kode verifikasi email</small></div><span class="i">chevron_right</span></a>
+  </div>
+  <button class="btn out" id="logout"><span class="i">logout</span> Keluar akun</button>
+  <p class="center muted"><a class="link" id="resetProg">Reset progres belajar</a></p>
+</section>
+
+<nav id="nav" hidden>
+  <button data-go="home" class="on"><span class="i">menu_book</span>Belajar</button>
+  <button data-go="profile"><span class="i">person</span>Profil</button>
+</nav>
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet"></div>
+<div class="toast" id="toast"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
